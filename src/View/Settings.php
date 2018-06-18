@@ -26,6 +26,14 @@ class Settings extends View
      */
     public function load()
     {
+
+        // default the machine
+        Data::setKey(
+                                "settings",
+                                "ultrasound_machine",
+                                "Sonosite SII"
+                            );
+
         if (post("do-update")) {
             exec("php -f " . escapeshellarg(dirname(dirname(__DIR__))
                     . "/updater.php"));
@@ -144,10 +152,8 @@ class Settings extends View
 
          <div class="spacer"></div>
         <h1>Pi Settings</h1>
-        <p>Change Machine and Reboot Pi</p>
-
         Current Machine: <?php echo Data::getKey("settings", "ultrasound_machine"); ?>
-
+        <p>Change Machine and Reboot Pi</p>
         <div class="buttons row">
             <div class="col-md-3 col-xs-6 btn btn-success" data-key="1" data-shortcut="1">
                 <div class="shortcut">Sonosite SII</div>
