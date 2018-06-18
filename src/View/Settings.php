@@ -27,14 +27,6 @@ class Settings extends View
     public function load()
     {
 
-        // default the machine
-        Data::setKey(
-                                "settings",
-                                "ultrasound_machine",
-                                "Sonosite SII"
-                            );
-
-
         if (post("change-machine-sii")) {
             Data::setKey("settings","ultrasound_machine","Sonosite SII");
 
