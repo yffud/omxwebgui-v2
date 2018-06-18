@@ -140,6 +140,27 @@ class Settings extends View
             </form>
             <?php
         } ?>
+
+
+         <div class="spacer"></div>
+        <h1>Pi Settings</h1>
+        <div class="buttons row">
+            <div class="col-md-3 col-xs-6 btn btn-success" data-key="1" data-shortcut="1">
+                <div class="shortcut">Sonosite SII</div>
+                <div class="info">Sonosite SII</div>
+            </div>
+            <div class="col-md-3 col-xs-6 btn btn-success" data-key="2" data-shortcut="2">
+                <div class="shortcut">Sonosite xPorte</div>
+                <div class="info">Sonosite xPorte</div>
+            </div>
+            <div class="col-md-3 col-xs-6 btn btn-success" data-key="3" data-shortcut="3">
+                <div class="shortcut">GE</div>
+                <div class="info">GE</div>
+            </div>
+
+            <div class="clear"></div>
+         </div>
+
         <div class="spacer"></div>
         <h1><?= t("settings") ?></h1>
         <form name="settings" method="post" action="">
