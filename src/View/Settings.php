@@ -34,6 +34,37 @@ class Settings extends View
                                 "Sonosite SII"
                             );
 
+
+        if (post("change-machine-sii")) {
+            Data::setKey("settings","ultrasound_machine","Sonosite SII");
+
+            //exec("php -f " . escapeshellarg(dirname(dirname(__DIR__)) . "/updater.php"));
+
+            header("Location: " . View::link("settings") . "?update-done=1");
+            die();
+        }
+
+        if (post("change-machine-ge")) {
+            Data::setKey("settings","ultrasound_machine","GE");
+
+            //exec("php -f " . escapeshellarg(dirname(dirname(__DIR__)) . "/updater.php"));
+
+            header("Location: " . View::link("settings") . "?update-done=1");
+            die();
+        }
+
+        if (post("change-machine-xporte")) {
+            Data::setKey("settings","ultrasound_machine","Sonosite XPorte");
+
+            //exec("php -f " . escapeshellarg(dirname(dirname(__DIR__)) . "/updater.php"));
+
+            header("Location: " . View::link("settings") . "?update-done=1");
+            die();
+        }
+
+
+
+
         if (post("do-update")) {
             exec("php -f " . escapeshellarg(dirname(dirname(__DIR__))
                     . "/updater.php"));
@@ -154,6 +185,18 @@ class Settings extends View
         <h1>Pi Settings</h1>
         Current Machine: <?php echo Data::getKey("settings", "ultrasound_machine"); ?>
         <p>Change Machine and Reboot Pi</p>
+                <form name="change-machine-sii" method="post" action="">
+            <input type="submit" value="Sonosite SII" name="change-machine-sii"
+                   class="btn btn-danger">
+        </form>
+                <form name="change-machine-ge" method="post" action="">
+            <input type="submit" value="GE" name="change-machine-ge"
+                   class="btn btn-danger">
+        </form>
+                <form name="change-machine-xporte" method="post" action="">
+            <input type="submit" value="Sonosite XPorte" name="change-machine-xporte"
+                   class="btn btn-danger">
+        </form>
         <div class="buttons row">
             <div class="col-md-3 col-xs-6 btn btn-success" data-key="1" data-shortcut="1">
                 <div class="shortcut">Sonosite SII</div>
