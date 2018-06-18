@@ -94,6 +94,9 @@ abstract class View
                         <a href="<?= View::link("settings") ?>"><?= t("settings") ?></a>
                     </li>
                     <li>
+                        <a href="<?= View::link("pisettings") ?>">Pi Settings</a>
+                    </li>
+                    <li>
                         <a href="https://github.com/brainfoolong/omxwebgui-v2"
                            target="_blank">Github</a>
                     </li>
