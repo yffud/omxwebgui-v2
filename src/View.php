@@ -93,17 +93,6 @@ abstract class View
                     <li>
                         <a href="<?= View::link("settings") ?>"><?= t("settings") ?></a>
                     </li>
-                    <li>
-                        <a href="<?= View::link("pisettings") ?>">Pi Settings</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/brainfoolong/omxwebgui-v2"
-                           target="_blank">Github</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/brainfoolong/omxwebgui-v2/issues"
-                           target="_blank">Issues</a>
-                    </li>
                 </ul>
             </nav>
             <div id="page-content-wrapper">
@@ -116,7 +105,7 @@ abstract class View
                                      <a href="https://github.com/brainfoolong/omxwebgui-v2"
                                         target="_blank" class="github">
                                         <strong>OMXWEBGUI v<?= Core::$version ?></strong>
-                                        <small>by BrainFooLong</small>
+                                        <small>Custom Pac-Man</small>
                                     </a>
                                     <a href="<?= View::link("settings") ?>" class="update hidden">
                                         <small>Update is ready</small>
