@@ -30,16 +30,18 @@ class Settings extends View
         if (post("change-machine-sii")) {
             Data::setKey("settings","ultrasound_machine","Sonosite SII");
 
-            //exec("php -f " . escapeshellarg(dirname(dirname(__DIR__)) . "/updater.php"));
+            exec("cp /boot/config_sii.txt /boot/config.txt");
+            //exec("sudo reboot");
 
-            header("Location: " . View::link("settings") . "?update-done=1");
+            header("Location: " . View::link("settings") . "?machine-update-done=1");
             die();
         }
 
         if (post("change-machine-ge")) {
             Data::setKey("settings","ultrasound_machine","GE");
 
-            //exec("php -f " . escapeshellarg(dirname(dirname(__DIR__)) . "/updater.php"));
+             exec("cp /boot/config_ge.txt /boot/config.txt");
+            //exec("sudo reboot");
 
             header("Location: " . View::link("settings") . "?update-done=1");
             die();
@@ -48,9 +50,10 @@ class Settings extends View
         if (post("change-machine-xporte")) {
             Data::setKey("settings","ultrasound_machine","Sonosite XPorte");
 
-            //exec("php -f " . escapeshellarg(dirname(dirname(__DIR__)) . "/updater.php"));
+             exec("cp /boot/config_xporte_vga.txt /boot/config.txt");
+            //exec("sudo reboot");
 
-            header("Location: " . View::link("settings") . "?update-done=1");
+            header("Location: " . View::link("settings") . "?machine-update-done=1");
             die();
         }
 
@@ -60,7 +63,7 @@ class Settings extends View
         if (post("do-update")) {
             exec("php -f " . escapeshellarg(dirname(dirname(__DIR__))
                     . "/updater.php"));
-            header("Location: " . View::link("settings") . "?update-done=1");
+            header("Location: " . View::link("settings") . "?machine-update-done=1");
             die();
         }
 
@@ -106,6 +109,10 @@ class Settings extends View
         if (get("update-done")) {
             echo '<div class="btn btn-success note">'
                 . t("settings.updates.success") . '</div>';
+        }
+
+        if (get("machine-update-done")) {
+            echo '<div class="btn btn-success note"> Machine updated' . '</div>';
         }
 
         if (post("delete-seen")) {
@@ -175,7 +182,7 @@ class Settings extends View
 
          <div class="spacer"></div>
         <h1>Pi Settings</h1>
-        Current Machine: <?php echo Data::getKey("settings", "ultrasound_machine"); ?>
+        Current Machine: <strong><?php echo Data::getKey("settings", "ultrasound_machine"); ?></strong>
         <p>Change Machine and Reboot Pi</p>
                 <form name="change-machine-sii" method="post" action="">
             <input type="submit" value="Sonosite SII" name="change-machine-sii"
