@@ -12,7 +12,7 @@ use Nullix\Omxwebgui\View;
  *
  * @package Nullix\Omxwebgui\View
  */
-class Settings extends View
+class Pisettings extends View
 {
     /**
      * Default file formats
