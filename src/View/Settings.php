@@ -189,7 +189,7 @@ class Settings extends View
             <input type="submit" value="Sonosite XPorte" name="change-machine-xporte"
                    class="btn btn-danger">
         </form>
-        <div class="buttons row">
+       <!-- <div class="buttons row">
             <div class="col-md-3 col-xs-6 btn btn-success" data-key="1" data-shortcut="1">
                 <div class="shortcut">Sonosite SII</div>
                 <div class="info">Sonosite SII</div>
@@ -204,7 +204,7 @@ class Settings extends View
             </div>
 
             <div class="clear"></div>
-         </div>
+         </div> -->
 
         <div class="spacer"></div>
         <h1><?= t("settings") ?></h1>
