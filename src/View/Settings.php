@@ -144,6 +144,10 @@ class Settings extends View
 
          <div class="spacer"></div>
         <h1>Pi Settings</h1>
+        <p>Change Machine and Reboot Pi</p>
+
+        Current Machine: <?php echo Data::getKey("settings", "ultrasound_machine"); ?>
+
         <div class="buttons row">
             <div class="col-md-3 col-xs-6 btn btn-success" data-key="1" data-shortcut="1">
                 <div class="shortcut">Sonosite SII</div>
