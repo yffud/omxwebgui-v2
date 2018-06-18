@@ -31,7 +31,7 @@ class Settings extends View
             Data::setKey("settings","ultrasound_machine","Sonosite SII");
 
             exec("sudo cp /boot/config_sii.txt /boot/config.txt");
-            //exec("sudo reboot");
+            exec("sudo reboot");
 
             header("Location: " . View::link("settings") . "?machine-update-done=1");
             die();
@@ -40,8 +40,8 @@ class Settings extends View
         if (post("change-machine-ge")) {
             Data::setKey("settings","ultrasound_machine","GE");
 
-             exec("sudo cp /boot/config_ge.txt /boot/config.txt");
-            //exec("sudo reboot");
+            exec("sudo cp /boot/config_ge.txt /boot/config.txt");
+            exec("sudo reboot");
 
             header("Location: " . View::link("settings") . "?update-done=1");
             die();
@@ -50,8 +50,8 @@ class Settings extends View
         if (post("change-machine-xporte")) {
             Data::setKey("settings","ultrasound_machine","Sonosite XPorte");
 
-             exec("sudo cp /boot/config_xporte_vga.txt /boot/config.txt");
-            //exec("sudo reboot");
+            exec("sudo cp /boot/config_xporte_vga.txt /boot/config.txt");
+            exec("sudo reboot");
 
             header("Location: " . View::link("settings") . "?machine-update-done=1");
             die();
