@@ -43,7 +43,7 @@ class Settings extends View
             exec("sudo cp /boot/config_ge.txt /boot/config.txt");
             exec("sudo reboot");
 
-            header("Location: " . View::link("settings") . "?update-done=1");
+            header("Location: " . View::link("settings") . "?machine-update-done=1");
             die();
         }
 
@@ -57,7 +57,13 @@ class Settings extends View
             die();
         }
 
+        if (post("network-mount")) {
 
+            exec("sudo mount -a");
+
+            header("Location: " . View::link("settings") . "?update-done=1");
+            die();
+        }
 
 
         if (post("do-update")) {
@@ -196,6 +202,15 @@ class Settings extends View
             <input type="submit" value="Sonosite XPorte" name="change-machine-xporte"
                    class="btn btn-danger">
         </form>
+
+        <h2>Network File mounts</h2>
+
+        <p>Run "mount -a" to automount items in /etc/fstab (Network mounts have trouble on boot when on Wifi)</p>
+                <form name="network-mount" method="post" action="">
+            <input type="submit" value="Auto mount /etc/fstab" name="network-mount"
+                   class="btn btn-success">
+        </form>
+
        <!-- <div class="buttons row">
             <div class="col-md-3 col-xs-6 btn btn-success" data-key="1" data-shortcut="1">
                 <div class="shortcut">Sonosite SII</div>
