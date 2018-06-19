@@ -65,6 +65,16 @@ class Settings extends View
             die();
         }
 
+        if (post("screen-blank")) {
+
+            exec("sudo xset s off");
+            exec("sudo xset -dpms");
+            exec("sudo xset s noblank");
+
+            header("Location: " . View::link("settings") . "?update-done=1");
+            die();
+        }
+
 
         if (post("do-update")) {
             exec("php -f " . escapeshellarg(dirname(dirname(__DIR__))
@@ -208,6 +218,14 @@ class Settings extends View
         <p>Run "mount -a" to automount items in /etc/fstab (Network mounts have trouble on boot when on Wifi)</p>
                 <form name="network-mount" method="post" action="">
             <input type="submit" value="Auto mount /etc/fstab" name="network-mount"
+                   class="btn btn-success">
+        </form>
+
+        <h2>Disable screen blanking</h2>
+
+        <p>Disable the screen from blanking for this session until reboot</p>
+                <form name="screen-blank" method="post" action="">
+            <input type="submit" value="Disable screen blanking" name="screen-blank"
                    class="btn btn-success">
         </form>
 
