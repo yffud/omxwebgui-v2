@@ -238,7 +238,7 @@ class Index extends View
       $('#annotation-time-store').val("")
       $('#annotation-file').val("")
       $('#annotation-comment').val("")
-      
+
 
       /* Alerts the results */
       posting.done(function( data ) {
