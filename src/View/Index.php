@@ -198,7 +198,7 @@ class Index extends View
                 <div class="time"></div>
 
             </div>
-            <div class="video-annotation"><div class="btn btn-success" onclick="$('.annotation').toggleClass('hidden'); setAnnotationTime();">Add Annotation</div></div>
+            <div class="video-annotation"><div class="btn btn-success" data-key="65" onclick="$('.annotation').toggleClass('hidden'); setAnnotationTime();">Add Annotation</div></div>
             <div class="annotation hidden">
 <!--                <div class="annotation-time"></div>
                 <div class="annotation-time-store"></div>
