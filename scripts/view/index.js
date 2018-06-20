@@ -34,6 +34,12 @@ $(function () {
     dbusCmd('status')
   }
 
+  function setAnnotationTime() {
+
+  annotations.find('input[name="annotation-time-store"]').val(annotations.find('.annotation-time').html())
+
+  }
+
   var parseStatus = function (statusData) {
     if (!statusData || statusData === 0 || statusData.status === 'stopped') {
       source.html(t('stopped'))
