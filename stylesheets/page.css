@@ -519,6 +519,14 @@ h1 {
     margin-bottom: 15px;
 }
 
+.player-controls .video-annotation {
+    position: relative;
+    height: 50px;
+    margin-top: 10px;
+    display: none;
+    margin-bottom: 15px;
+}
+
 .player-controls .time {
     position: absolute;
     right: 0;
