@@ -46,6 +46,8 @@ $(function () {
       controls.show()
       annotations.find('.annotation-time').html(numberToTime(statusData.position))
       annotations.find('.annotation-file').html(statusData.source)
+      annotations.find('.annotation-file').hide()
+      annotations.find('.annotation-time').hide()
       annotation.show()
       controlBtns.addClass('hidden')
       if (status === 'paused') {
