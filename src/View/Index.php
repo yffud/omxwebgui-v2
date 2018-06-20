@@ -233,7 +233,7 @@ class Index extends View
           url = $form.attr( 'action' );
 
       /* Send the data using post with element id name and name2*/
-      var posting = $.post( url, { annotation-time-store: $('#annotation-time-store').val(), annotation-file: $('#annotation-file').val() } );
+      var posting = $.post( url, { 'annotation-time-store': $('#annotation-time-store').val(), 'annotation-file': $('#annotation-file').val() } );
 
       /* Alerts the results */
       posting.done(function( data ) {
