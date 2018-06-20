@@ -3,6 +3,7 @@ $(function () {
   var source = $('.player-source')
   var controls = $('.player-controls')
   var annotation = $('.video-annotation')
+  var annotations = $('.annotation')
   var controlBtns = controls.find('.controls .control')
   var lastStatusData = null
   var statusTo = null
@@ -43,8 +44,8 @@ $(function () {
       source.html(t(status) + ' <span>' + statusData.source + '</span>')
       controls.find('.time').html(numberToTime(statusData.position) + ' / ' + numberToTime(statusData.duration))
       controls.show()
-      annotation.find('.annotation-time').html(numberToTime(statusData.position))
-      annotation.find('.annotation-file').html(statusData.source)
+      annotations.find('.annotation-time').html(numberToTime(statusData.position))
+      annotations.find('.annotation-file').html(statusData.source)
       annotation.show()
       controlBtns.addClass('hidden')
       if (status === 'paused') {
