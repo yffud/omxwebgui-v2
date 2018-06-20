@@ -196,7 +196,7 @@ class Index extends View
                     <div class="point"></div>
                 </div>
                 <div class="time"></div>
-                <div class="video-annotation">...</div>
+                <div class="video-annotation"><p>Annotation Data here</p></div>
             </div>
         </div>
         <div class="input-group spacer">
