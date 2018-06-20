@@ -198,12 +198,13 @@ class Index extends View
                 <div class="time"></div>
 
             </div>
-            <div class="video-annotation"><div class="btn btn-success" onclick="$('.annotation').toggleClass('hidden'); $('.annotation-time-store').html($('.annotation-time').html());">Add Annotation</div></div>
+            <div class="video-annotation"><div class="btn btn-success" onclick="$('.annotation').toggleClass('hidden'); $('input[name="annotation-time"]').val($('.annotation-time').html());">Add Annotation</div></div>
             <div class="annotation hidden">
 <!--                <div class="annotation-time"></div>
                 <div class="annotation-time-store"></div>
                 <div class="annotation-file"></div> -->
 
+                <div class="annotation-time"></div>
                 <form name="settings" method="post" action="">
                     <input type="hidden" id="annotation-time" name="annotation-time">
                     <input type="hidden" id="annotation-file" name="annotation-file">

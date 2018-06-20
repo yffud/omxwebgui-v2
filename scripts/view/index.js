@@ -44,7 +44,7 @@ $(function () {
       source.html(t(status) + ' <span>' + statusData.source + '</span>')
       controls.find('.time').html(numberToTime(statusData.position) + ' / ' + numberToTime(statusData.duration))
       controls.show()
-      annotations.find('input[name="annotation-time"]').val(numberToTime(statusData.position))
+      annotations.find('.annotation-time').html(numberToTime(statusData.position))
       annotations.find('input[name="annotation-file"]').val(statusData.source)
       annotations.find('.annotation-file').hide()
       annotations.find('.annotation-time').hide()
