@@ -205,11 +205,11 @@ class Index extends View
                 <div class="annotation-file"></div> -->
 
                 <div class="annotation-time"></div>
-                <form name="settings" method="post" action="">
+                <form id="formannotation" method="post" action="">
                     <input type="hidden" id="annotation-time-store" name="annotation-time-store">
                     <input type="hidden" id="annotation-file" name="annotation-file">
                     Annotation Comment: <input type="text" id="annotation-comment" name="annotation-comment">
-                    <div class="btn btn-success">Submit</div>
+                    <input type="submit" class="btn btn-success" value="Submit">
                 </form>
             </div>
         </div>
@@ -220,6 +220,28 @@ class Index extends View
             <input type="text" class="form-control input-lg search"
                    placeholder="<?= t("search.placeholder") ?>">
         </div>
+
+<script type='text/javascript'>
+    /* attach a submit handler to the form */
+    $("#formannotation").submit(function(event) {
+
+      /* stop form from submitting normally */
+      event.preventDefault();
+
+      /* get the action attribute from the <form action=""> element */
+      var $form = $( this ),
+          url = $form.attr( 'action' );
+
+      /* Send the data using post with element id name and name2*/
+      var posting = $.post( url, { annotation-time-store: $('#annotation-time-store').val(), annotation-file: $('#annotation-file').val() } );
+
+      /* Alerts the results */
+      posting.done(function( data ) {
+        alert('success');
+      });
+    });
+</script>
+
         <div class="filelist"></div>
         <?php
     }
