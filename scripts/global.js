@@ -99,6 +99,7 @@ function checkForUpdate (callback) {
 
 function setAnnotationTime() {
 
+  var annotations = $('.annotation')
   annotations.find('input[name="annotation-time-store"]').val(annotations.find('.annotation-time').html())
 
 }
