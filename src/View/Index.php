@@ -198,7 +198,7 @@ class Index extends View
                 <div class="time"></div>
 
             </div>
-            <div class="video-annotation"><div class="btn btn-success">Add Annotation</div><p>Annotation Data here</p></div>
+            <div class="video-annotation"><div class="btn btn-success">Add Annotation</div></div>
         </div>
         <div class="input-group spacer">
             <div class="input-group-addon"><img
