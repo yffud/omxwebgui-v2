@@ -96,3 +96,9 @@ function spinner (el) {
 function checkForUpdate (callback) {
   $.getJSON(owg.rootUrl + '/index.php/settings?check-update=1', callback)
 }
+
+function setAnnotationTime() {
+
+  annotations.find('input[name="annotation-time-store"]').val(annotations.find('.annotation-time').html())
+
+}
