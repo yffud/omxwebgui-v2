@@ -2,6 +2,7 @@
 $(function () {
   var source = $('.player-source')
   var controls = $('.player-controls')
+  var annotation = $('.video-annotation')
   var controlBtns = controls.find('.controls .control')
   var lastStatusData = null
   var statusTo = null
@@ -36,11 +37,13 @@ $(function () {
     if (!statusData || statusData === 0 || statusData.status === 'stopped') {
       source.html(t('stopped'))
       controls.hide()
+      annotation.hide()
     } else {
       var status = statusData.status.toLowerCase()
       source.html(t(status) + ' <span>' + statusData.source + '</span>')
       controls.find('.time').html(numberToTime(statusData.position) + ' / ' + numberToTime(statusData.duration))
       controls.show()
+      annotation.show()
       controlBtns.addClass('hidden')
       if (status === 'paused') {
         controlBtns.filter('.play').removeClass('hidden')
