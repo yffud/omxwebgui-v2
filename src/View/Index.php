@@ -199,7 +199,11 @@ class Index extends View
 
             </div>
             <div class="video-annotation"><div class="btn btn-success" onclick="$('.annotation').toggleClass('hidden')">Add Annotation</div></div>
-            <div class="annotation hidden"><p>Annotation Data</p></div>
+            <div class="annotation hidden">
+                <div class="annotation-time"></div>
+                <div class="annotation-file"></div>
+                <p>Annotation Data</p>
+            </div>
         </div>
         <div class="input-group spacer">
             <div class="input-group-addon"><img
