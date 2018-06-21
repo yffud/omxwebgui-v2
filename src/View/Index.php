@@ -91,6 +91,11 @@ class Index extends View
 
             $path = __DIR__ . "/../../data/annotation.csv";
 
+            header('Content-Encoding: UTF-8');
+            header('Content-type: text/csv; charset=UTF-8');
+            header('Content-Disposition: attachment; filename=Annotations_Export.csv');
+            echo "\xEF\xBB\xBF"; // UTF-8 BOM
+
             echo file_get_contents($path);
 
             die();
