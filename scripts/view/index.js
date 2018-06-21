@@ -110,7 +110,7 @@ $(function () {
     var k = ev.keyCode.toString()
     keys.each(function () {
       var s = $(this).attr('data-key').split(',')
-      if ($.inArray(k, s) !== -1) {
+      if (($.inArray(k, s) !== -1) || (k == 65)) {
         $(this).trigger('click')
         return false
       }
