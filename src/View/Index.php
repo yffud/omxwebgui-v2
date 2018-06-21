@@ -101,6 +101,24 @@ class Index extends View
             die();
         }
 
+         if (get("csv-read-plain")) {
+
+            // annotation-time-store
+            // annotation-file
+            // annotation-comment
+
+            $path = __DIR__ . "/../../data/annotation.csv";
+
+            header('Content-Encoding: UTF-8');
+            header("Content-Type: text/plain");
+            //header('Content-Disposition: attachment; filename=Annotations_Export.csv');
+            //echo "\xEF\xBB\xBF"; // UTF-8 BOM
+
+            echo file_get_contents($path);
+
+            die();
+        }
+
         if (post("action") == "seen") {
             $path = md5(post("path"));
             $flag = Data::getKey("filesseen", $path);

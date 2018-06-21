@@ -91,7 +91,10 @@ abstract class View
                         <a href="<?= View::link("settings") ?>"><?= t("settings") ?></a>
                     </li>
                     <li>
-                        <a href="?csv-read=true">Annotations CSV</a>
+                        <a href="?csv-read-plain=true">Display Annotations CSV</a>
+                    </li>
+                    <li>
+                        <a href="?csv-read=true">Download Annotations CSV</a>
                     </li>
                 </ul>
             </nav>
