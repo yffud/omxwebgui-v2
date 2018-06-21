@@ -262,7 +262,7 @@ class Index extends View
           url = $form.attr( 'action' );
 
       /* Send the data using post with element id name and name2*/
-      var posting = $.post( url, { 'csv-append': 'true', annotation-time-store': $('#annotation-time-store').val(), 'annotation-file': $('#annotation-file').val(), 'annotation-comment': $('#annotation-comment').val() } );
+      var posting = $.post( url, { 'csv-append': 'true', 'annotation-time-store': $('#annotation-time-store').val(), 'annotation-file': $('#annotation-file').val(), 'annotation-comment': $('#annotation-comment').val() } );
 
 
 
