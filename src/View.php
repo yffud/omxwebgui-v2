@@ -102,7 +102,7 @@ abstract class View
                             <div class="spinner-container"></div>
                             <div class="page-content">
                                 <span class="top-logo">
-                                     <a href="https://github.com/brainfoolong/omxwebgui-v2"
+                                     <a href="https://github.com/yffud/omxwebgui-v2"
                                         target="_blank" class="github">
                                         <strong>OMXWEBGUI v<?= Core::$version ?></strong>
                                         <small>Custom Pac-Man</small>
