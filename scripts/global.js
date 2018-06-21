@@ -102,5 +102,4 @@ function setAnnotationTime() {
   var annotations = $('.annotation')
   annotations.find('input[name="annotation-time-store"]').val(annotations.find('.annotation-time').html())
   annotations.find('input[name="annotation-comment"]').focus()
-
 }
