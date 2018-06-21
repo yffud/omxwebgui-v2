@@ -235,7 +235,7 @@ class Index extends View
 
                 <div class="annotation-time"></div>
                 <form id="formannotation" method="post" action="">
-                    <input type="hidden" id="annotation-time-store" name="annotation-time-store">
+                    <input id="annotation-time-store" name="annotation-time-store">
                     <input type="hidden" id="annotation-file" name="annotation-file">
                     Annotation Comment: <input type="text" id="annotation-comment" name="annotation-comment">
                     <input type="submit" class="btn btn-success" value="Submit" name="csv-append">
