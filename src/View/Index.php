@@ -83,6 +83,19 @@ class Index extends View
             die();
         }
 
+        if (get("csv-read")) {
+
+            // annotation-time-store
+            // annotation-file
+            // annotation-comment
+
+            $path = __DIR__ . "/../../data/annotation.csv";
+
+            echo file_get_contents($path);
+
+            die();
+        }
+
         if (post("action") == "seen") {
             $path = md5(post("path"));
             $flag = Data::getKey("filesseen", $path);

@@ -57,6 +57,26 @@ class Settings extends View
             die();
         }
 
+        if (post("delete-annotations")) {
+
+                    $path = __DIR__ . "/../../data/annotation.csv";
+
+                    $fh = fopen( $path, 'w' );
+                    fclose($fh);
+
+            header("Location: " . View::link("settings") . "?update-done=1");
+            die();
+        }
+
+
+        if (post("shutdown-pi")) {
+
+                    exec("sudo shutdown -h now");
+
+            header("Location: " . View::link("settings") . "?update-done=1");
+            die();
+        }
+
         if (post("network-mount")) {
 
             exec("sudo mount -a");
@@ -227,6 +247,22 @@ class Settings extends View
                 <form name="screen-blank" method="post" action="">
             <input type="submit" value="Disable screen blanking" name="screen-blank"
                    class="btn btn-success">
+        </form>
+
+        <h2>Delete all file annotations</h2>
+
+        <p>This will clear all the annotations that have been stored for files in the annotations CSV</p>
+                <form name="delete-annotations" method="post" action="">
+            <input type="submit" value="Delete all CSV annotations" name="delete-annotations"
+                   class="btn btn-danger">
+        </form>
+
+        <h2>Shutdown Pi</h2>
+
+        <p>This will shutdown the Pi via (shutdown -h now)</p>
+                <form name="shutdown-pi" method="post" action="">
+            <input type="submit" value="Shutdown Raspberry Pi" name="shutdown-pi"
+                   class="btn btn-danger">
         </form>
 
        <!-- <div class="buttons row">
