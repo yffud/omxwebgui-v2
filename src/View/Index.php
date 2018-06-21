@@ -62,7 +62,7 @@ class Index extends View
 
             $path = __DIR__ . "/../data/annotation.csv";
 
-            $handle = fopen($path);
+            $handle = fopen($path,"a");
 
             $line = array();
 
