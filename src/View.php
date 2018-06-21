@@ -57,7 +57,7 @@ abstract class View
                 echo '<script type="text/javascript" src="' . $url . '"></script>';
             }
             ?>
-            <title>Omx Web Gui by BrainFooLong</title>
+            <title>Omx Web Gui Customised for Pac-Man/title>
             <script type="text/javascript">
               owg.translations = <?=json_encode(Translation::$values) . ";"?>
                 owg.language = '<?=Data::getKey("settings", "language")?>'
