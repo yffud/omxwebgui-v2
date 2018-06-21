@@ -110,8 +110,12 @@ $(function () {
     var k = ev.keyCode.toString()
     keys.each(function () {
       var s = $(this).attr('data-key').split(',')
-      if (($.inArray(k, s) !== -1) || (k == 65)) {
+      if ($.inArray(k, s) !== -1) {
         $(this).trigger('click')
+        return false
+      } else if (k == 65) {
+        $('.annotation').toggleClass('hidden')
+        setAnnotationTime();
         return false
       }
     })
