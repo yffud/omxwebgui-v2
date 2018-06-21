@@ -83,11 +83,15 @@ abstract class View
             <nav class="navbar navbar-inverse navbar-fixed-top"
                  id="sidebar-wrapper" role="navigation">
                 <ul class="nav sidebar-nav">
+                    <li></li>
                     <li>
                         <a href="<?= View::link("index") ?>"><?= t("playlist") ?></a>
                     </li>
                     <li>
                         <a href="<?= View::link("settings") ?>"><?= t("settings") ?></a>
+                    </li>
+                    <li>
+                        <a href="?csv-read=true">Annotations CSV</a>
                     </li>
                 </ul>
             </nav>
