@@ -60,7 +60,7 @@ class Index extends View
             // annotation-file
             // annotation-comment
 
-            $path = __DIR__ . "/../data/$annotation.csv";
+            $path = __DIR__ . "/../data/annotation.csv";
 
             $handle = fopen($path);
 
