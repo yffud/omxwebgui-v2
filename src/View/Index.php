@@ -71,7 +71,7 @@ class Index extends View
             $line[] = post("annotation-comment");
 
 
-            fputcvs($handle, $line); # $line is an array of string variables
+            fputcsv($handle, $line); # $line is an array of string variables
             fclose($handle);
 
             //Data::setKey("settings","ultrasound_machine","Sonosite SII");
