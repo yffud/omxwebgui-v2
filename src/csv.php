@@ -13,12 +13,18 @@ if (post("csv-append")) {
             // annotation-file
             // annotation-comment
 
-            Data::setKey("settings","ultrasound_machine","Sonosite SII");
+            $path = __DIR__ . "/../data/$annotation.csv";
 
-            exec("sudo cp /boot/config_sii.txt /boot/config.txt");
-            exec("sudo reboot");
+            $handle = fopen($path);
+            fputcvs($handle, $line); # $line is an array of string variables
+            fclose($handle);
 
-            header("Location: " . View::link("settings") . "?machine-update-done=1");
+            //Data::setKey("settings","ultrasound_machine","Sonosite SII");
+
+            //exec("sudo cp /boot/config_sii.txt /boot/config.txt");
+            //exec("sudo reboot");
+
+            //header("Location: " . View::link("settings") . "?machine-update-done=1");
             die();
 }
 
@@ -46,11 +52,7 @@ if (post("csv-delete")) {
 
 
 
-$handle = fopen();
 
-fputcvs($handle, $line); # $line is an array of string variables
-
-fclose($handle);
 
 
 

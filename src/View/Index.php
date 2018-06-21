@@ -54,6 +54,35 @@ class Index extends View
             return;
         }
 
+        if (post("csv-append")) {
+
+            // annotation-time-store
+            // annotation-file
+            // annotation-comment
+
+            $path = __DIR__ . "/../data/$annotation.csv";
+
+            $handle = fopen($path);
+
+            $line = array();
+
+            $line[] = post("annotation-file");
+            $line[] = post("annotation-time-store");
+            $line[] = post("annotation-comment");
+
+
+            fputcvs($handle, $line); # $line is an array of string variables
+            fclose($handle);
+
+            //Data::setKey("settings","ultrasound_machine","Sonosite SII");
+
+            //exec("sudo cp /boot/config_sii.txt /boot/config.txt");
+            //exec("sudo reboot");
+
+            //header("Location: " . View::link("settings") . "?machine-update-done=1");
+            die();
+        }
+
         if (post("action") == "seen") {
             $path = md5(post("path"));
             $flag = Data::getKey("filesseen", $path);
