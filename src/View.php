@@ -107,9 +107,9 @@ abstract class View
                                         <strong>OMXWEBGUI v<?= Core::$version ?></strong>
                                         <small>Custom Pac-Man</small>
                                     </a>
-                                    <a href="<?= View::link("settings") ?>" class="update hidden">
+                                    <!-- <a href="<?= View::link("settings") ?>" class="update hidden">
                                         <small>Update is ready</small>
-                                    </a>
+                                    </a> -->
                                 </span>
                                 <?= $this->getContent() ?>
                             </div>
