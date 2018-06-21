@@ -238,7 +238,7 @@ class Index extends View
                     <input type="hidden" id="annotation-time-store" name="annotation-time-store">
                     <input type="hidden" id="annotation-file" name="annotation-file">
                     Annotation Comment: <input type="text" id="annotation-comment" name="annotation-comment">
-                    <input type="submit" class="btn btn-success" value="Submit">
+                    <input type="submit" class="btn btn-success" value="Submit" name="csv-append">
                 </form>
             </div>
         </div>
@@ -262,7 +262,7 @@ class Index extends View
           url = $form.attr( 'action' );
 
       /* Send the data using post with element id name and name2*/
-      var posting = $.post( url, { 'annotation-time-store': $('#annotation-time-store').val(), 'annotation-file': $('#annotation-file').val(), 'annotation-comment': $('#annotation-comment').val() } );
+      var posting = $.post( url, { 'csv-append': 'true', annotation-time-store': $('#annotation-time-store').val(), 'annotation-file': $('#annotation-file').val(), 'annotation-comment': $('#annotation-comment').val() } );
 
 
 
