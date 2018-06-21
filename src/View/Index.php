@@ -287,6 +287,9 @@ class Index extends View
       $('#annotation-time-store').val("")
       $('#annotation-file').val("")
       $('#annotation-comment').val("")
+      // blur from focus so that the keyevents will work again.
+      $('#annotation-comment').blur()
+
       $('.annotation').toggleClass('hidden')
 
 
